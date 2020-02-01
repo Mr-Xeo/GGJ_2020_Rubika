@@ -6,11 +6,9 @@ public class SmoothCamera : MonoBehaviour
 {
     public Transform target;
     public bool zoomed;
-
-    public Player castPlayerScript;
+  public Player castPlayerScript;
     
     Camera cam;
-
     Vector3 DezoomedPos;
 
 
