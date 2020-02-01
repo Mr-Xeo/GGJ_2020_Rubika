@@ -7,8 +7,23 @@ public class Player : MonoBehaviour
     //Player 
     [Header("Player variables")]
     public GameObject playerGo;
-    Vector3 playerControl;
-    public float playerSpeed = 5;
+    public Rigidbody2D playerRb;
+    public Animator anim;
+    public Vector3 playerControl;
+    public float playerSpeed = 500;
+    private float controllerDeadzone = 0.25f;
+
+    [Header("Collider")]
+    public Collider2D actionCollider;
+    GameObject grabbedObject;
+
+    //Grab
+    bool isLifting;
+    bool isObjectGrabbed;
+    bool liftNerf;
+
+    //Action / Repair
+    public bool isRepair;
 
     //Player inputs
     [Header("Player inputs")]
@@ -19,21 +34,57 @@ public class Player : MonoBehaviour
 
     public bool playerBindUseObj;
     public bool playerBindLiftObj;
+    public bool playerBindCamera;
     public bool playerBindStart;
-
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
+    //---------
     void Update()
     {
         GetPlayerController();
 
+        if(isObjectGrabbed)
+        {
+            grabbedObject.transform.rotation = Quaternion.identity;
+        }
+        if(playerBindLiftObj)
+        {
+            PlayerGrab();
+        }
+    }
+
+
+    //---------
+    void FixedUpdate()
+    {
         PlayerMovement();
+
+        PlayerUse();
+    }
+
+
+
+
+    void PlayerMovement()
+    {
+        playerControl = new Vector3(playerBindHorizontal, playerBindVertical);
+        if (playerControl.magnitude < controllerDeadzone)
+        {
+            playerControl = Vector2.zero;
+            playerRb.velocity = Vector2.zero;
+            anim.SetBool("ismoving", false);
+        }
+        else
+        {
+            playerRb.velocity = new Vector2(playerBindHorizontal * playerSpeed * Time.deltaTime, playerBindVertical * playerSpeed * Time.deltaTime);
+            anim.SetBool("ismoving", true);
+        }    
+
     }
 
     void GetPlayerController()
@@ -42,19 +93,70 @@ public class Player : MonoBehaviour
         playerBindHorizontal = Input.GetAxis("Horizontal");
         playerBindVertical = Input.GetAxis("Vertical");
 
+
         //Buttons
         playerBindUseObj = Input.GetButton("Action1");
-        playerBindLiftObj = Input.GetButton("Action2");
-        playerBindStart = Input.GetButton("Start");
-
-        //-----
-        //AJOUTER BOUTON Y
+        playerBindLiftObj = Input.GetButtonDown("Action2");
+        playerBindCamera = Input.GetButtonDown("Action3");
+        playerBindStart = Input.GetButtonDown("Start");
     }
 
-    void PlayerMovement()
+    void PlayerGrab()
     {
-        playerControl = new Vector3(playerBindHorizontal * playerSpeed, playerBindVertical * playerSpeed);
+        if(!isObjectGrabbed)
+        {
+            ContactFilter2D filter = new ContactFilter2D();
+            filter.SetLayerMask(LayerMask.GetMask("Tool"));
+            filter.useTriggers = true;
+            List<Collider2D> colliders = new List<Collider2D>();
+            Physics2D.OverlapCollider(actionCollider, filter, colliders);
 
-        playerGo.transform.position = playerGo.transform.position + playerControl * Time.deltaTime;
+            if (colliders.Count > 0)
+            {
+                isObjectGrabbed = true;
+                colliders[0].gameObject.transform.parent = actionCollider.transform;
+                grabbedObject = colliders[0].gameObject;
+                grabbedObject.transform.position = actionCollider.transform.position;
+                grabbedObject.transform.rotation = Quaternion.identity;
+            }
+        }
+        else
+        {
+            grabbedObject.transform.parent = null;
+            grabbedObject = null;
+            isObjectGrabbed = false;
+        }
+    }       
+
+    void PlayerUse()
+    {
+        if (playerBindUseObj)
+        {
+            isRepair = true;
+        }
+
+        else if (!playerBindUseObj)
+        {
+            isRepair = false;
+        }
+    }
+
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+
+        #region Repair
+
+        if (other.gameObject.tag == "Machine" && playerBindUseObj && isObjectGrabbed)
+        {
+            isRepair = true;
+        }
+
+        else
+        {
+            isRepair = false;
+        }
+
+        #endregion
     }
 }
