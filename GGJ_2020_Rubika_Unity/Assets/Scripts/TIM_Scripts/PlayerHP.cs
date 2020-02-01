@@ -12,6 +12,7 @@ public class PlayerHP : MonoBehaviour
         if (collision.gameObject.tag=="Asteroid")
         {
             TakeDamage(25f);
+            Destroy(collision.gameObject);
         }
     }
     public void TakeDamage(float Amount)
