@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [Header("Player variables")]
     public GameObject playerGo;
     public Rigidbody2D playerRb;
+    public Animator anim;
     public Vector3 playerControl;
     public float playerSpeed = 500;
     private float controllerDeadzone = 0.25f;
@@ -75,9 +76,15 @@ public class Player : MonoBehaviour
         if (playerControl.magnitude < controllerDeadzone)
         {
             playerControl = Vector2.zero;
+            playerRb.velocity = Vector2.zero;
+            anim.SetBool("ismoving", false);
         }
+        else
+        {
+            playerRb.velocity = new Vector2(playerBindHorizontal * playerSpeed * Time.deltaTime, playerBindVertical * playerSpeed * Time.deltaTime);
+            anim.SetBool("ismoving", true);
+        }    
 
-        playerRb.velocity = new Vector2(playerBindHorizontal * playerSpeed * Time.deltaTime, playerBindVertical * playerSpeed * Time.deltaTime);
     }
 
     void GetPlayerController()
