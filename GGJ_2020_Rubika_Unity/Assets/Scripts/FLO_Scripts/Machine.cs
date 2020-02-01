@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class Machine : MonoBehaviour
 {
-    public int MachineNumber = 5;
-
-
     //Life vars
-    float machineLifeMax = 200;
+    public static float machineLifeMax = 200;
     public float machineLife = 100;
     float lifeRegen = 50;
     [Range(0, 1)]
