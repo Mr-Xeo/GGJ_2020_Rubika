@@ -11,6 +11,7 @@ public class BombManager : MonoBehaviour
     public Color timer1Color;
     public GameObject[] bombs;
     public DamageScript damageScript;
+    public Player playerScript;
 
     private int bombScore;
 
@@ -40,22 +41,28 @@ public class BombManager : MonoBehaviour
     {
         if (bombingCD < 0)
         {
-            if (damageScript.isEveryMachineFullLife == true)// il n'y a plus de dommages && la bombe est lancée
+            if ((damageScript.isEveryMachineFullLife == true)&&(playerScript.activateLever==true))// il n'y a plus de dommages && la bombe est lancée
             {
                 bombScore++;
                 bombs[bombScore].SetActive(true);
-                timer = 60f;
-                bombingCD = 10f;
+
                 if (bombScore == 3)
                 {
                     FindObjectOfType<GameManager>().WinGame();
                 }
+                else
+                {
+                timer = 60f;
+                bombingCD = 10f;
+                }
             }
+
             else
             {
                 FindObjectOfType<GameManager>().EndGame();
             }
         }
+
         else
         {
             bombingCD -= Time.deltaTime;
