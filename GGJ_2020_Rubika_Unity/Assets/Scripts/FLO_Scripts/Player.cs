@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     //Player 
     [Header("Player variables")]
     public GameObject playerGo;
-    Vector3 playerControl;
+    public Vector3 playerControl;
     public float playerSpeed = 5;
 
     //Player inputs
