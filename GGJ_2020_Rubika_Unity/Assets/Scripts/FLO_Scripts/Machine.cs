@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Machine : MonoBehaviour
 {
-    float machineLife = 200;
+    //float machineLife = 200;
 
     [Range(0, 100)]
     public float machineLifeUi = 100;

@@ -7,30 +7,22 @@ public class SmoothCamera : MonoBehaviour
     public Transform target;
     public bool zoomed;
 
+    public Player castPlayerScript;
+    
     Camera cam;
 
-    /*void Zoom()
+    Vector3 DezoomedPos;
 
-    {
-        
-    }*/
-    //(Input.GetButton("Zoom")
-    // Start is called before the first frame update
+
     void Start()
     {
         cam = GetComponent<Camera>();
+        DezoomedPos = cam.transform.position;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        /* Vector2 smoothedPosition = Vector2.Lerp(transform.position, target.position, cameraSmooth);
-         transform.position = smoothedPosition;
-         transform.LookAt(target);*/
-    }
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (castPlayerScript.playerBindCamera)
         {
             if (zoomed == false)
             StartCoroutine(ZoomCouritine());

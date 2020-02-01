@@ -97,8 +97,8 @@ public class Player : MonoBehaviour
         //Buttons
         playerBindUseObj = Input.GetButton("Action1");
         playerBindLiftObj = Input.GetButtonDown("Action2");
-        playerBindCamera = Input.GetButton("Action3");
-        playerBindStart = Input.GetButton("Start");
+        playerBindCamera = Input.GetButtonDown("Action3");
+        playerBindStart = Input.GetButtonDown("Start");
     }
 
     void PlayerGrab()
