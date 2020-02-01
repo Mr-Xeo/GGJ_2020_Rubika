@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: 52805e73fa347db4e877153574b5593d
+guid: f8a76a9d4074e4d4f965880d1226e383
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4495228234685644736
-    second: Movement spritesheet_0
+      213: 491271231981691430
+    second: Movement spritesheet 1_0
   - first:
-      213: 8155894734140455709
-    second: Movement spritesheet_1
+      213: 2683457722660269307
+    second: Movement spritesheet 1_1
   - first:
-      213: -6847954705190587322
-    second: Movement spritesheet_2
+      213: -3371288450567160509
+    second: Movement spritesheet 1_2
   - first:
-      213: 5020635952084615
-    second: Movement spritesheet_3
-  - first:
-      213: 226676360092872192
-    second: Movement spritesheet_4
+      213: -1972675412218694272
+    second: Movement spritesheet 1_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -58,8 +55,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -101,85 +98,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Movement spritesheet_0
+      name: Movement spritesheet 1_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 5
-        width: 23
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 5
+        y: 89
+        width: 38
+        height: 23
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0cf7eb04342426e30800000000000000
-      internalID: 4495228234685644736
+      spriteID: 62223a6259851d600800000000000000
+      internalID: 491271231981691430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Movement spritesheet_1
+      name: Movement spritesheet 1_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 5
-        width: 21
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 5
+        y: 60
+        width: 38
+        height: 23
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1bbbe58c0f8f2170800000000000000
-      internalID: 8155894734140455709
+      spriteID: bfca1f8c49e8d3520800000000000000
+      internalID: 2683457722660269307
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Movement spritesheet_2
+      name: Movement spritesheet 1_2
       rect:
         serializedVersion: 2
-        x: 60
-        y: 5
-        width: 23
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 5
+        y: 33
+        width: 38
+        height: 21
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64476274a7d27f0a0800000000000000
-      internalID: -6847954705190587322
+      spriteID: 34d319c1407c631d0800000000000000
+      internalID: -3371288450567160509
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Movement spritesheet_3
+      name: Movement spritesheet 1_3
       rect:
         serializedVersion: 2
-        x: 89
-        y: 5
-        width: 23
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 5
+        y: 6
+        width: 38
+        height: 23
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7867876ed36d11000800000000000000
-      internalID: 5020635952084615
+      spriteID: 085be8d0a26af94e0800000000000000
+      internalID: -1972675412218694272
       vertices: []
       indices: 
       edges: []
