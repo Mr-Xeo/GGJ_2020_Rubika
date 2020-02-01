@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SmoothCamera : MonoBehaviour
 {
-    public Transform target;
+  //  public Transform target;
     public bool zoomed;
   public Player castPlayerScript;
     
