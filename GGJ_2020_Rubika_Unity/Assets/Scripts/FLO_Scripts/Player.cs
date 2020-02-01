@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
 
     //Action / Repair
     public bool isRepair;
+    public bool activateLever;
 
     //Player inputs
     [Header("Player inputs")]
@@ -155,6 +156,20 @@ public class Player : MonoBehaviour
         else
         {
             isRepair = false;
+        }
+
+        #endregion
+
+        #region Lever
+
+        if (other.gameObject.tag == "Lever" && playerBindUseObj && !isObjectGrabbed)
+        {
+            activateLever  = true;
+        }
+
+        else
+        {
+            activateLever = false;
         }
 
         #endregion
