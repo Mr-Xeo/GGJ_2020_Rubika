@@ -13,11 +13,16 @@ public class Player : MonoBehaviour
     private float controllerDeadzone = 0.25f;
 
     [Header("Collider")]
-    public Collider2D grabCollider;
+    public Collider2D actionCollider;
+    GameObject grabbedObject;
+
+    //Grab
     bool isLifting;
     bool isObjectGrabbed;
     bool liftNerf;
 
+    //Action / Repair
+    bool isRepair;
 
     //Player inputs
     [Header("Player inputs")]
@@ -31,12 +36,10 @@ public class Player : MonoBehaviour
     public bool playerBindCamera;
     public bool playerBindStart;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     //---------
@@ -44,8 +47,14 @@ public class Player : MonoBehaviour
     {
         GetPlayerController();
 
-        PlayerGrab();
-
+        if(isObjectGrabbed)
+        {
+            grabbedObject.transform.rotation = Quaternion.identity;
+        }
+        if(playerBindLiftObj)
+        {
+            PlayerGrab();
+        }
     }
 
 
@@ -53,6 +62,8 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         PlayerMovement();
+
+        PlayerUse();
     }
 
 
@@ -78,61 +89,63 @@ public class Player : MonoBehaviour
 
         //Buttons
         playerBindUseObj = Input.GetButton("Action1");
-        playerBindLiftObj = Input.GetButton("Action2");
+        playerBindLiftObj = Input.GetButtonDown("Action2");
         playerBindCamera = Input.GetButton("Action3");
         playerBindStart = Input.GetButton("Start");
     }
 
     void PlayerGrab()
     {
-        //grab nerf
-        if(playerBindLiftObj && !liftNerf)
+        if(!isObjectGrabbed)
         {
-            StartCoroutine(PlayerLiftingCoroutine());
-            liftNerf = true;
+            ContactFilter2D filter = new ContactFilter2D();
+            filter.SetLayerMask(LayerMask.GetMask("Tool"));
+            filter.useTriggers = true;
+            List<Collider2D> colliders = new List<Collider2D>();
+            Physics2D.OverlapCollider(actionCollider, filter, colliders);
+
+            if (colliders.Count > 0)
+            {
+                isObjectGrabbed = true;
+                colliders[0].gameObject.transform.parent = actionCollider.transform;
+                grabbedObject = colliders[0].gameObject;
+                grabbedObject.transform.position = actionCollider.transform.position;
+                grabbedObject.transform.rotation = Quaternion.identity;
+            }
         }
-
-        if(!playerBindLiftObj)
+        else
         {
-            liftNerf = false;
-        }
-
-
-        //grabbing item
-        if (isLifting && !isObjectGrabbed)
-        {
-            isObjectGrabbed = true;
-        }
-
-        else if (isLifting && isObjectGrabbed)
-        {
+            grabbedObject.transform.parent = null;
+            grabbedObject = null;
             isObjectGrabbed = false;
         }
-
     }       
 
-    void OnTriggerStay2D(Collider2D other)
+    void PlayerUse()
     {
-        if(isObjectGrabbed)
+        if (playerBindUseObj)
         {
-            other.gameObject.transform.parent = grabCollider.transform;
+            isRepair = true;
         }
 
-        else if (!isObjectGrabbed)
+        else if (!playerBindUseObj)
         {
-            other.gameObject.transform.parent = null;
-            isObjectGrabbed = false;
+            isRepair = false;
         }
     }
 
 
-    IEnumerator PlayerLiftingCoroutine()
+    void OnTriggerStay2D(Collider2D other)
     {
-        isLifting = true;
-        yield return 0;
-        yield return 0;
-        yield return 0;
-        yield return 0;
-        isLifting = false;
+
+        #region Repair
+
+        if (other.gameObject.tag == "Machine" && isRepair)
+        {
+            //Add Life
+            print("Machine repairing");
+        }
+
+        #endregion
     }
 }

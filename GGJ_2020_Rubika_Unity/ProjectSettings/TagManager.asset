@@ -3,9 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
   - Asteroid
   - Ship
+  - Tool
+  - Machine
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Tool
   - 
   - 
   - 
