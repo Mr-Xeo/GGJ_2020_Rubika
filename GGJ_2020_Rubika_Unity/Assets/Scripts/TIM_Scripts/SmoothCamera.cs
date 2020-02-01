@@ -5,12 +5,7 @@ using UnityEngine;
 public class SmoothCamera : MonoBehaviour
 {
     public Transform target;
-    //public float cameraSmooth = 0.125f;
     public bool zoomed;
-    private float startingSize = 5;
-    private float endSize = 3;
-    private float elapsed = 0f;
-    private float duration = 0.5f;
 
     Camera cam;
 
