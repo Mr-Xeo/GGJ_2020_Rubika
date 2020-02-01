@@ -46,7 +46,6 @@ public class Player : MonoBehaviour
 
         PlayerGrab();
 
-        print(isObjectGrabbed);
     }
 
 
@@ -114,7 +113,6 @@ public class Player : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        print(other.gameObject.name);    
         if(isObjectGrabbed)
         {
             other.gameObject.transform.parent = grabCollider.transform;
