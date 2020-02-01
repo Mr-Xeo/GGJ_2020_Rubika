@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     bool liftNerf;
 
     //Action / Repair
-    bool isRepair;
+    public bool isRepair;
 
     //Player inputs
     [Header("Player inputs")]
@@ -147,10 +147,14 @@ public class Player : MonoBehaviour
 
         #region Repair
 
-        if (other.gameObject.tag == "Machine" && isRepair)
+        if (other.gameObject.tag == "Machine" && playerBindUseObj && isObjectGrabbed)
         {
-            //Add Life
-            print("Machine repairing");
+            isRepair = true;
+        }
+
+        else
+        {
+            isRepair = false;
         }
 
         #endregion

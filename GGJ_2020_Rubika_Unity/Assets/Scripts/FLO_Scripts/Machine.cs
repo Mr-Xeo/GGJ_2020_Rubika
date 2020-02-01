@@ -4,21 +4,36 @@ using UnityEngine;
 
 public class Machine : MonoBehaviour
 {
-    //float machineLife = 200;
-
-    [Range(0, 100)]
-    public float machineLifeUi = 100;
+    public int MachineNumber = 5;
 
 
-    // Start is called before the first frame update
+    //Life vars
+    float machineLifeMax = 200;
+    public float machineLife = 100;
+    float lifeRegen = 50;
+    [Range(0, 1)]
+    public float machineLifeUi;
+
+    public Player castPlayerScript;
+
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
-    {
-        
+    {       
+        if(castPlayerScript.isRepair && machineLife < machineLifeMax)
+        {
+            machineLife += lifeRegen * Time.deltaTime;
+        }
+
+        if(machineLife > machineLifeMax)
+        {
+            machineLife = machineLifeMax;
+        }
+
+        machineLifeUi = (machineLife - 0) / (machineLifeMax - 0);
     }
 }
