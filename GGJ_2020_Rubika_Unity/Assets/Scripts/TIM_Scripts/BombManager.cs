@@ -3,18 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Timer : MonoBehaviour
+public class BombManager : MonoBehaviour
 {
     public float timer;
     public float bombingCD;
     public Text timer1;
     public Color timer1Color;
+    public GameObject[] bombs;
+
+    private int bombScore;
 
     // Start is called before the first frame update
     void Start()
     {
         timer = 60f;
         bombingCD = 10f;
+        bombScore = 0;
     }
 
     // Update is called once per frame
@@ -37,7 +41,17 @@ public class Timer : MonoBehaviour
         {
             if (bombingCD < 0)
             {
-
+                /*if ()// il y a des dommages en cours
+                {
+                    //game over
+                }
+                else if()// il n'y a plus de dommages && la bombe est lancée
+                {
+                    bombScore++;
+                    bombs[bombScore].SetActive(true);
+                    timer = 60f;
+                    bombingCD = 10f;
+                }*/
             }
             else
             {
@@ -48,3 +62,4 @@ public class Timer : MonoBehaviour
         }
     }
 }
+
