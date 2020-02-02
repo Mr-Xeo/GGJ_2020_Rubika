@@ -154,11 +154,13 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Lever" /*&& playerBindUseObj && !isObjectGrabbed*/)
         {
             activateLever  = true;
+            GameObject.Find("Lever").GetComponent<Animator>().SetBool("OnIt", true);
         }
 
         else
         {
             activateLever = false;
+            GameObject.Find("Lever").GetComponent<Animator>().SetBool("OnIt", false);
         }
 
         #endregion

@@ -27,19 +27,51 @@ public class Machine : MonoBehaviour
 
     GameObject currentBubulle;
 
+    AudioSource source;
+    public AudioClip tool1Clip;
+    public AudioClip tool2Clip;
+    public AudioClip tool3Clip;
+
+    bool flagSon;
+
     void Start()
     {
-
+        source = GetComponent<AudioSource>();
+        flagSon = true;
     }
 
     void Update()
     {
         //Normalization
         machineLifeUi = (machineLife - 0) / (machineLifeMax - 0);
-
         // Life Regen
         if (castPlayerScript.currentMachine == this && machineLife < machineLifeMax && ChoosedTool == getChildrenName.goChildName)
         {
+            if(flagSon)
+            {
+                AudioClip clip = null;
+                flagSon = false;
+                switch (ChoosedTool)
+                {
+                    case "Tool1":
+                        clip = tool1Clip;
+                        break;
+
+
+                    case "Tool2":
+                        clip = tool2Clip;
+                        break;
+
+
+                    case "Tool3":
+                        clip = tool3Clip;
+                        break;
+                }
+                source.clip = clip;
+                source.Play();
+            }
+
+
             castPlayerScript.wheel.gameObject.SetActive(true);
             castPlayerScript.repairFill.gameObject.SetActive(true);
             Vector2 viewportPosition = Camera.main.WorldToViewportPoint(transform.position);
@@ -53,6 +85,11 @@ public class Machine : MonoBehaviour
 
             machineLife += lifeRegen * Time.deltaTime;
         }
+        else
+        {
+            source.Stop();
+            flagSon = true;
+        }
 
         // si plus que max, then max
         if(machineLife > machineLifeMax)
@@ -60,6 +97,7 @@ public class Machine : MonoBehaviour
             machineLife = machineLifeMax;
             castPlayerScript.wheel.gameObject.SetActive(false);
             castPlayerScript.repairFill.gameObject.SetActive(false);
+
         }
 
         //si max life, peux à nouveau choisir un outil (pour le prochain dmg)

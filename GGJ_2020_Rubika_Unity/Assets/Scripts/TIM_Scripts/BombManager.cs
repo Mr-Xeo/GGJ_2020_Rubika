@@ -22,8 +22,6 @@ public class BombManager : MonoBehaviour
     {
         timer = maxTime;
         bombingCD = maxBombingTime;
-        bombScore = 0;
-        StartCoroutine(damageScript.SpawnTentacouille());
     }
 
     // Update is called once per frame
@@ -59,6 +57,7 @@ public class BombManager : MonoBehaviour
                     bombingCD = maxBombingTime;
                     StartCoroutine(damageScript.SpawnTentacouille());
                     timer1.color = Color.white;
+                    GameObject.Find("Lever").GetComponent<Animator>().SetBool("Enable", false);
                 }
             }
 
@@ -70,6 +69,7 @@ public class BombManager : MonoBehaviour
 
         else
         {
+            GameObject.Find("Lever").GetComponent<Animator>().SetBool("Enable", true);
             bombingCD -= Time.deltaTime;
             timer1.text = bombingCD.ToString("0");
             timer1.color = timer1Color;

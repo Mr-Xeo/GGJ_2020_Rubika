@@ -23,8 +23,12 @@ public class DamageScript : MonoBehaviour
 
     BombManager bombManager;
 
+    AudioSource source;
+    public AudioClip tentacouilleOrgasmSound;
+
     void Start()
     {
+        source = GetComponent<AudioSource>();
         bombManager = GetComponent<BombManager>();
         GameObject[] MachinesGo = GameObject.FindGameObjectsWithTag("Machine");
         machineArray = new Machine[MachinesGo.Length];
@@ -32,6 +36,8 @@ public class DamageScript : MonoBehaviour
         {
             machineArray[i] = MachinesGo[i].GetComponent<Machine>();
         }
+        bombManager.bombingCD = bombManager.maxBombingTime;
+        StartCoroutine(SpawnTentacouille());
     }
 
     void Update()
@@ -69,6 +75,7 @@ public class DamageScript : MonoBehaviour
         float secBeforeExplo = Random.Range(secMinExplo, secMaxExplo);
         yield return new WaitForSeconds(secBeforeExplo);
 
+        Destroy(currentTentacouille);
         currentTentacouille = Instantiate(tentacouillePrefab, (Vector2)goMachine.transform.position + tentacouilleOffset, Quaternion.identity);
 
         Vector2 direction = goMachine.transform.position - currentTentacouille.transform.position;
@@ -80,8 +87,7 @@ public class DamageScript : MonoBehaviour
         }
         Destroy(currentTentacouille);
         Destroy(Instantiate(tentacouilleFX, goMachine.transform.position, Quaternion.identity), 0.6f);
-
-
+        source.PlayOneShot(tentacouilleOrgasmSound, 1);
 
         goMachine.machineLife -= machineDmg;
         InstanciateScreenshake.shakeDuration = 1;
