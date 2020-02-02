@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     //Player 
@@ -23,20 +23,20 @@ public class Player : MonoBehaviour
     bool liftNerf;
 
     //Action / Repair
-    public bool isRepair;
     public bool activateLever;
+    [HideInInspector] public Machine currentMachine;
 
     //Player inputs
     [Header("Player inputs")]
     [Range(-1f, 1f)]
-    public float playerBindHorizontal;
+    float playerBindHorizontal;
     [Range(-1f, 1f)]
-    public float playerBindVertical;
+    float playerBindVertical;
 
-    public bool playerBindUseObj;
-    public bool playerBindLiftObj;
-    public bool playerBindCamera;
-    public bool playerBindStart;
+    bool playerBindUseObj;
+    bool playerBindLiftObj;
+    [HideInInspector] public bool playerBindCamera;
+    bool playerBindStart;
 
     // Start is called before the first frame update
     void Start()
@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
     {
         PlayerMovement();
 
-        PlayerUse();
+        //PlayerUse();
     }
 
 
@@ -129,7 +129,7 @@ public class Player : MonoBehaviour
         }
     }       
 
-    void PlayerUse()
+    /*void PlayerUse()
     {
         if (playerBindUseObj)
         {
@@ -140,7 +140,7 @@ public class Player : MonoBehaviour
         {
             isRepair = false;
         }
-    }
+    }*/
 
 
     void OnTriggerStay2D(Collider2D other)
@@ -150,12 +150,11 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.tag == "Machine" && playerBindUseObj && isObjectGrabbed)
         {
-            isRepair = true;
+            currentMachine = other.GetComponent<Machine>();
         }
-
         else
         {
-            isRepair = false;
+            currentMachine = null;
         }
 
         #endregion

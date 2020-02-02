@@ -1,28 +1,43 @@
 fileFormatVersion: 2
-guid: 67e326cf8accf9740b3e8c6587596d1c
+guid: dff5146a320fcb54abb343c9c8bafd27
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6251662627327492251
-    second: Machine1-Sheet_Working_0
+      213: 1547844318559980739
+    second: RepairWheel-Sheet_0
   - first:
-      213: -2381305331200832770
-    second: Machine1-Sheet_Working_1
+      213: -6438968626969557399
+    second: RepairWheel-Sheet_1
   - first:
-      213: -8145148189031877935
-    second: Machine1-Sheet_Working_2
+      213: -1642218557061205134
+    second: RepairWheel-Sheet_2
   - first:
-      213: 48906222902474686
-    second: Machine1-Sheet_Working_3
+      213: 3219086909895281790
+    second: RepairWheel-Sheet_3
   - first:
-      213: -6610445925832744157
-    second: Machine1-Sheet_Working_4
+      213: 3200086661779517421
+    second: RepairWheel-Sheet_4
   - first:
-      213: 3878216409202086390
-    second: Machine1-Sheet_Working_5
+      213: 7897569100877455614
+    second: RepairWheel-Sheet_5
   - first:
-      213: -1604579463287399846
-    second: Machine1-Sheet_Working_6
+      213: -556782816259162764
+    second: RepairWheel-Sheet_6
+  - first:
+      213: -4844650078223230883
+    second: RepairWheel-Sheet_7
+  - first:
+      213: -2501782272142075076
+    second: RepairWheel-Sheet_8
+  - first:
+      213: 7034325314107162384
+    second: RepairWheel-Sheet_9
+  - first:
+      213: 1122902267773490200
+    second: RepairWheel-Sheet_10
+  - first:
+      213: -9170928068582582984
+    second: RepairWheel-Sheet_11
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -107,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Machine1-Sheet_Working_0
+      name: RepairWheel-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 50
-        height: 50
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +136,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56f3f8296f1ad39a0800000000000000
-      internalID: -6251662627327492251
+      spriteID: 3cccf57f43c0b7510800000000000000
+      internalID: 1547844318559980739
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Machine1-Sheet_Working_1
+      name: RepairWheel-Sheet_1
       rect:
         serializedVersion: 2
-        x: 50
+        x: 32
         y: 0
-        width: 50
-        height: 50
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +157,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efac7000b67e3fed0800000000000000
-      internalID: -2381305331200832770
+      spriteID: 966489d162034a6a0800000000000000
+      internalID: -6438968626969557399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Machine1-Sheet_Working_2
+      name: RepairWheel-Sheet_2
       rect:
         serializedVersion: 2
-        x: 100
+        x: 64
         y: 0
-        width: 50
-        height: 50
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +178,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d2b6dd70ee96fe80800000000000000
-      internalID: -8145148189031877935
+      spriteID: 273ffc65ceaa539e0800000000000000
+      internalID: -1642218557061205134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Machine1-Sheet_Working_3
+      name: RepairWheel-Sheet_3
       rect:
         serializedVersion: 2
-        x: 150
+        x: 96
         y: 0
-        width: 50
-        height: 50
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb7786b53ffbda000800000000000000
-      internalID: 48906222902474686
+      spriteID: e7c0b653d7e7cac20800000000000000
+      internalID: 3219086909895281790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Machine1-Sheet_Working_4
+      name: RepairWheel-Sheet_4
       rect:
         serializedVersion: 2
-        x: 200
+        x: 128
         y: 0
-        width: 50
-        height: 50
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +220,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 323afcf347af244a0800000000000000
-      internalID: -6610445925832744157
+      spriteID: def65d53dddf86c20800000000000000
+      internalID: 3200086661779517421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Machine1-Sheet_Working_5
+      name: RepairWheel-Sheet_5
       rect:
         serializedVersion: 2
-        x: 250
+        x: 160
         y: 0
-        width: 50
-        height: 50
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +241,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f1d498c64132d530800000000000000
-      internalID: 3878216409202086390
+      spriteID: ef0e6ee014dc99d60800000000000000
+      internalID: 7897569100877455614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Machine1-Sheet_Working_6
+      name: RepairWheel-Sheet_6
       rect:
         serializedVersion: 2
-        x: 300
+        x: 192
         y: 0
-        width: 50
-        height: 50
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,8 +262,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5a1ed4ca736bb9e0800000000000000
-      internalID: -1604579463287399846
+      spriteID: 47db4d38af8e548f0800000000000000
+      internalID: -556782816259162764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairWheel-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d589f620c6854ccb0800000000000000
+      internalID: -4844650078223230883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairWheel-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3b1a9b4742e74dd0800000000000000
+      internalID: -2501782272142075076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairWheel-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f35ed8a91fe9160800000000000000
+      internalID: 7034325314107162384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairWheel-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8149e14c9a9559f00800000000000000
+      internalID: 1122902267773490200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RepairWheel-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 835d973e2815ab080800000000000000
+      internalID: -9170928068582582984
       vertices: []
       indices: 
       edges: []

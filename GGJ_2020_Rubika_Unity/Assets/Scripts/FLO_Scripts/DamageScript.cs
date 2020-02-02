@@ -7,8 +7,8 @@ public class DamageScript : MonoBehaviour
     public Screen_Shake InstanciateScreenshake;
     Machine[] machineArray;
 
-    float secMaxExplo = 2;
-    float secMinExplo = 1;
+    float secMaxExplo = 5;
+    float secMinExplo = 2;
 
     float machineDmg = 25;
 
@@ -24,12 +24,19 @@ public class DamageScript : MonoBehaviour
         }
 
 
-        StartCoroutine(AttackCoroutine());
+        InvokeRepeating("Re", 0, 5);
     }
 
     void Update()
     {
         CheckMachinesFullLife();
+
+        
+    }
+
+    void Timer()
+    {
+
     }
 
     void CheckMachinesFullLife()
@@ -64,5 +71,10 @@ public class DamageScript : MonoBehaviour
 
         goMachine.machineLife -= machineDmg;
         InstanciateScreenshake.shakeDuration = 1;
+    }
+
+    void Re()
+    {
+        StartCoroutine(AttackCoroutine());
     }
 }
