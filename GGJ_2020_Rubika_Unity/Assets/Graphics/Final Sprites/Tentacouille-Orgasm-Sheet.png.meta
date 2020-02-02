@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: edd1ed438c5452f4db402d7f49caedea
+guid: 878e17311d27a16409b44de3ccf44b1b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5178546919496333231
-    second: Spritesheet idle_0
+      213: -8269582056962154134
+    second: Tentacouille-Orgasm-Sheet_0
   - first:
-      213: -8215925367255777914
-    second: Spritesheet idle_1
+      213: 2846752085432649254
+    second: Tentacouille-Orgasm-Sheet_1
   - first:
-      213: -4686732777954903744
-    second: Spritesheet idle_2
+      213: -6238239109958807590
+    second: Tentacouille-Orgasm-Sheet_2
   - first:
-      213: 617030826458419036
-    second: Spritesheet idle_3
+      213: 654426745514732628
+    second: Tentacouille-Orgasm-Sheet_3
+  - first:
+      213: -1417903164893573399
+    second: Tentacouille-Orgasm-Sheet_4
+  - first:
+      213: 7984987812081156044
+    second: Tentacouille-Orgasm-Sheet_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -59,7 +65,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -75,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -87,7 +93,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -98,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spritesheet idle_0
+      name: Tentacouille-Orgasm-Sheet_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 5
-        width: 23
-        height: 38
+        x: 0
+        y: 0
+        width: 31
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1584aba830b1228b0800000000000000
-      internalID: -5178546919496333231
+      spriteID: a61a3ddeeea8c3d80800000000000000
+      internalID: -8269582056962154134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet idle_1
+      name: Tentacouille-Orgasm-Sheet_1
       rect:
         serializedVersion: 2
         x: 31
-        y: 5
-        width: 23
-        height: 38
+        y: 0
+        width: 31
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68d3997886b2bfd80800000000000000
-      internalID: -8215925367255777914
+      spriteID: 626c0df50f1b18720800000000000000
+      internalID: 2846752085432649254
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet idle_2
+      name: Tentacouille-Orgasm-Sheet_2
       rect:
         serializedVersion: 2
-        x: 57
-        y: 5
-        width: 23
-        height: 38
+        x: 62
+        y: 0
+        width: 31
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04971dcae5165feb0800000000000000
-      internalID: -4686732777954903744
+      spriteID: adfc4f2c4925d69a0800000000000000
+      internalID: -6238239109958807590
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet idle_3
+      name: Tentacouille-Orgasm-Sheet_3
       rect:
         serializedVersion: 2
-        x: 82
-        y: 5
-        width: 23
-        height: 38
+        x: 93
+        y: 0
+        width: 31
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,8 +181,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5f058a7442209800800000000000000
-      internalID: 617030826458419036
+      spriteID: 45cabe168adf41900800000000000000
+      internalID: 654426745514732628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tentacouille-Orgasm-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 0
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eecd9a7598925ce0800000000000000
+      internalID: -1417903164893573399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tentacouille-Orgasm-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 0
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccfbbeadb1060de60800000000000000
+      internalID: 7984987812081156044
       vertices: []
       indices: 
       edges: []
