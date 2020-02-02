@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4282411973688598606}
   - component: {fileID: 4282411973688598609}
   - component: {fileID: 4282411973688598608}
-  - component: {fileID: 7498752056928614867}
+  - component: {fileID: 5855941970114303812}
   m_Layer: 0
   m_Name: Machine
   m_TagString: Machine
@@ -49,7 +49,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   machineLife: 100
   machineLifeUi: 0
+  bubullePrefab: {fileID: 6784892071623335226, guid: f55095361ded4f840b636567429b5a9e,
+    type: 3}
   castPlayerScript: {fileID: 0}
+  tool1Display: {fileID: 2198470347428961928, guid: f4c1e25139843c04ab0eab5a701b5bd3,
+    type: 3}
+  tool2Display: {fileID: 4086510304363764594, guid: 6c63229e6926b3e41b333e391b46504c,
+    type: 3}
+  tool3Display: {fileID: 935381978135357721, guid: 50d96f49d57ba0e4883514a9c19b7828,
+    type: 3}
 --- !u!212 &4282411973688598606
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -148,7 +156,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!95 &7498752056928614867
+--- !u!95 &5855941970114303812
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0

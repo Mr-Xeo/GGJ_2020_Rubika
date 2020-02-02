@@ -24,7 +24,7 @@ public class DamageScript : MonoBehaviour
         }
 
 
-        StartCoroutine(AttackCoroutine());
+        InvokeRepeating("Re", 0, 5);
     }
 
     void Update()
@@ -64,5 +64,10 @@ public class DamageScript : MonoBehaviour
 
         goMachine.machineLife -= machineDmg;
         InstanciateScreenshake.shakeDuration = 1;
+    }
+
+    void Re()
+    {
+        StartCoroutine(AttackCoroutine());
     }
 }
