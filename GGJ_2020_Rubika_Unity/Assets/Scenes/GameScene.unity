@@ -4388,6 +4388,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3615960475220677326, guid: cb4cb2e81426358468b849dfc66bbe08,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -726
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101091200588727924, guid: cb4cb2e81426358468b849dfc66bbe08,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -720
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb4cb2e81426358468b849dfc66bbe08, type: 3}
 --- !u!1 &1686875642
@@ -4706,7 +4716,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5ea0532160bcdfe4b9c96bb7dafadc4b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.27
+  m_Volume: 0.16
   m_Pitch: 1
   Loop: 0
   Mute: 0
