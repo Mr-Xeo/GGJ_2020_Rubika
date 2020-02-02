@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7577584900644332426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7577584900644332427}
+  - component: {fileID: 7577584900644332424}
+  - component: {fileID: 4178352439425983276}
+  - component: {fileID: 7577584900644332425}
+  - component: {fileID: 7577584900644332430}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7577584900644332427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577584900644332426}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9028107, y: 0.49302113, z: -10.83424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7577584900644332424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577584900644332426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f38acd6c6a14c1b43ac25675efeb12d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Perdu: {fileID: 0}
+  Gagne: {fileID: 0}
+  restartDelay: 5
+--- !u!114 &4178352439425983276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577584900644332426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86aa088b56a564a488bc5af75f9cd09c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  bombingCD: 0
+  timer1: {fileID: 0}
+  timer1Color: {r: 1, g: 0, b: 0, a: 1}
+  bombs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  damageScript: {fileID: 7577584900644332425}
+  playerScript: {fileID: 0}
+--- !u!114 &7577584900644332425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577584900644332426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c54e979ee928d449a743faaa59a80cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InstanciateScreenshake: {fileID: 0}
+  isEveryMachineFullLife: 0
+--- !u!114 &7577584900644332430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577584900644332426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9150f8b18f9293241a3b1417f06dfff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerGo: {fileID: 0}
+  playerRb: {fileID: 0}
+  anim: {fileID: 0}
+  playerControl: {x: 0, y: 0, z: 0}
+  playerSpeed: 200
+  actionCollider: {fileID: 0}
+  isRepair: 0
+  activateLever: 0
+  playerBindHorizontal: 0
+  playerBindVertical: 0
+  playerBindUseObj: 0
+  playerBindLiftObj: 0
+  playerBindCamera: 0
+  playerBindStart: 0

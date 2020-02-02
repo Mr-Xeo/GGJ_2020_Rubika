@@ -168,7 +168,9 @@ MonoBehaviour:
   anim: {fileID: 2200352459488512037}
   playerControl: {x: 0, y: 0, z: 0}
   playerSpeed: 200
-  actionCollider: {fileID: 0}
+  actionCollider: {fileID: 1300353049}
+  isRepair: 0
+  activateLever: 0
   playerBindHorizontal: 0
   playerBindVertical: 0
   playerBindUseObj: 0
@@ -199,19 +201,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8542063967569151672}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1 &8542063967832439239
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8542063967832439232}
   - component: {fileID: 8542063967832439233}
-  - component: {fileID: 2200352458773234681}
+  - component: {fileID: 1300353049}
   m_Layer: 0
   m_Name: grab_hitbox
   m_TagString: Untagged
@@ -251,7 +253,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8542063967832439239}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -283,7 +285,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 5dfc8446217cf474bb294459f697f0d1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a14b23964e855664d8f7f657e2a17781, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 0.3882353}
   m_FlipX: 0
   m_FlipY: 0
@@ -294,8 +296,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2200352458773234681
-BoxCollider2D:
+--- !u!58 &1300353049
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -308,15 +310,5 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
-  m_EdgeRadius: 0
+  m_Radius: 0.08

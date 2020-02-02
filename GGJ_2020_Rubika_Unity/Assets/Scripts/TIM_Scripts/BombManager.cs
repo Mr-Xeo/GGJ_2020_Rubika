@@ -10,6 +10,8 @@ public class BombManager : MonoBehaviour
     public Text timer1;
     public Color timer1Color;
     public GameObject[] bombs;
+    public DamageScript damageScript;
+    public Player playerScript;
 
     private int bombScore;
 
@@ -37,29 +39,39 @@ public class BombManager : MonoBehaviour
     }
     void BombingTime()
     {
-
+        if (bombingCD < 0)
         {
-            if (bombingCD < 0)
+            if ((damageScript.isEveryMachineFullLife == true)&&(playerScript.activateLever==true))// il n'y a plus de dommages && la bombe est lancée
             {
-                /*if ()// il y a des dommages en cours
+                bombScore++;
+                bombs[bombScore].SetActive(true);
+
+                if (bombScore == 3)
                 {
-                    //game over
+                    FindObjectOfType<GameManager>().WinGame();
                 }
-                else if()// il n'y a plus de dommages && la bombe est lancée
+                else
                 {
-                    bombScore++;
-                    bombs[bombScore].SetActive(true);
-                    timer = 60f;
-                    bombingCD = 10f;
-                }*/
+                timer = 60f;
+                bombingCD = 10f;
+                }
             }
+
             else
             {
-                bombingCD -= Time.deltaTime;
-                timer1.text = bombingCD.ToString("0");
-                timer1.color = timer1Color;
+                FindObjectOfType<GameManager>().EndGame();
             }
+        }
+
+        else
+        {
+            bombingCD -= Time.deltaTime;
+            timer1.text = bombingCD.ToString("0");
+            timer1.color = timer1Color;
         }
     }
 }
+
+
+
 
