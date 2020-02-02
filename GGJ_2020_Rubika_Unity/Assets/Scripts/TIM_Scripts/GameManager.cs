@@ -6,13 +6,26 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager gm;
+
     bool gameHasEnded = false;
     public Text Perdu;
     public Text Gagne;
     public float restartDelay = 5f;
+    private AudioManager audioManager;
+    public string spawnSoundName;
+
+    void Start()
+    {
+        audioManager = AudioManager.instance;
+        if (audioManager == null)
+        {
+            Debug.LogError("No AudioManager found in the scene");
+        }
+    }
     public void EndGame()
     {
-        if (gameHasEnded==false)
+        if (gameHasEnded == false)
         {
             gameHasEnded = true;
             Perdu.text = "Better Luck Next Time!";
@@ -21,7 +34,7 @@ public class GameManager : MonoBehaviour
     }
     public void WinGame()
     {
-        if (gameHasEnded==false)
+        if (gameHasEnded == false)
         {
             gameHasEnded = true;
             Gagne.text = "GG EZ";
@@ -32,15 +45,11 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("GameScene");
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+    //pour jouer un son: audioManager.PlaySound("Respawn");
 }
