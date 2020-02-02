@@ -7,8 +7,8 @@ public class DamageScript : MonoBehaviour
     public Screen_Shake InstanciateScreenshake;
     Machine[] machineArray;
 
-    float secMaxExplo = 2;
-    float secMinExplo = 1;
+    float secMaxExplo = 5;
+    float secMinExplo = 2;
 
     float machineDmg = 25;
 
@@ -30,6 +30,13 @@ public class DamageScript : MonoBehaviour
     void Update()
     {
         CheckMachinesFullLife();
+
+        
+    }
+
+    void Timer()
+    {
+
     }
 
     void CheckMachinesFullLife()

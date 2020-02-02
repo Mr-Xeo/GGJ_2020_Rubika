@@ -89,12 +89,6 @@ public class Machine : MonoBehaviour
                 ChoosedTool = T3;
                 Instantiate(tool3Display, currentBubulle.transform.GetChild(1).position, Quaternion.identity, currentBubulle.transform);
                 break;
-
-            default:
-                print("failed");
-                break;
         }
-
-        print(ChoosedTool);
     }
 }
