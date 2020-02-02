@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class Machine : MonoBehaviour
 {
     //Life vars
-    public static float machineLifeMax = 200;
+    public static float machineLifeMax = 25;
     public float machineLife = 200;
-    float lifeRegen = 50;
+    float lifeRegen = 20;
     [Range(0, 1)]
     public float machineLifeUi;
     public GameObject bubullePrefab;
@@ -40,6 +40,17 @@ public class Machine : MonoBehaviour
         // Life Regen
         if (castPlayerScript.currentMachine == this && machineLife < machineLifeMax && ChoosedTool == getChildrenName.goChildName)
         {
+            castPlayerScript.wheel.gameObject.SetActive(true);
+            castPlayerScript.repairFill.gameObject.SetActive(true);
+            Vector2 viewportPosition = Camera.main.WorldToViewportPoint(transform.position);
+            Vector2 worldObject_ScreenPosition = new Vector2(
+            ((viewportPosition.x * castPlayerScript.CanvasRect.sizeDelta.x) - (castPlayerScript.CanvasRect.sizeDelta.x * 0.5f)),
+            ((viewportPosition.y * castPlayerScript.CanvasRect.sizeDelta.y) - (castPlayerScript.CanvasRect.sizeDelta.y * 0.5f)));
+            castPlayerScript.repairFill.rectTransform.anchoredPosition = worldObject_ScreenPosition;
+            castPlayerScript.wheel.rectTransform.anchoredPosition = worldObject_ScreenPosition;
+
+            castPlayerScript.repairFill.fillAmount = machineLifeUi;
+
             machineLife += lifeRegen * Time.deltaTime;
         }
 
@@ -47,6 +58,8 @@ public class Machine : MonoBehaviour
         if(machineLife > machineLifeMax)
         {
             machineLife = machineLifeMax;
+            castPlayerScript.wheel.gameObject.SetActive(false);
+            castPlayerScript.repairFill.gameObject.SetActive(false);
         }
 
         //si max life, peux à nouveau choisir un outil (pour le prochain dmg)

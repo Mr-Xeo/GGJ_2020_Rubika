@@ -25,6 +25,9 @@ public class Player : MonoBehaviour
     //Action / Repair
     public bool activateLever;
     [HideInInspector] public Machine currentMachine;
+    public Image wheel;
+    public Image repairFill;
+    public RectTransform CanvasRect;
 
     //Player inputs
     [Header("Player inputs")]
@@ -129,19 +132,6 @@ public class Player : MonoBehaviour
         }
     }       
 
-    /*void PlayerUse()
-    {
-        if (playerBindUseObj)
-        {
-            isRepair = true;
-        }
-
-        else if (!playerBindUseObj)
-        {
-            isRepair = false;
-        }
-    }*/
-
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -161,7 +151,7 @@ public class Player : MonoBehaviour
 
         #region Lever
 
-        if (other.gameObject.tag == "Lever" && playerBindUseObj && !isObjectGrabbed)
+        if (other.gameObject.tag == "Lever" /*&& playerBindUseObj && !isObjectGrabbed*/)
         {
             activateLever  = true;
         }

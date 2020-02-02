@@ -11,12 +11,14 @@ public class GameManager : MonoBehaviour
     bool gameHasEnded = false;
     public Text Perdu;
     public Text Gagne;
+    public GameObject vignette;
     public float restartDelay = 5f;
     private AudioManager audioManager;
     public string spawnSoundName;
 
     void Start()
     {
+        vignette.SetActive(false);
         audioManager = AudioManager.instance;
         if (audioManager == null)
         {
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
         {
             gameHasEnded = true;
             Perdu.text = "Better Luck Next Time!";
+            vignette.SetActive(true);
             Invoke("Restart", restartDelay);
         }
     }
@@ -51,5 +54,5 @@ public class GameManager : MonoBehaviour
     {
 
     }
-    //pour jouer un son: audioManager.PlaySound("Respawn");
+    //pour jouer un son: audioManager.PlaySound("Gas");
 }

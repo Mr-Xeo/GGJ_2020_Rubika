@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class BombManager : MonoBehaviour
 {
-    public float timer;
-    public float bombingCD;
+    public float maxTime;
+    public float maxBombingTime;
+    [HideInInspector] public float timer;
+    [HideInInspector] public float bombingCD;
     public Text timer1;
     public Color timer1Color;
     public GameObject[] bombs;
@@ -18,9 +20,10 @@ public class BombManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timer = 60f;
-        bombingCD = 10f;
+        timer = maxTime;
+        bombingCD = maxBombingTime;
         bombScore = 0;
+        StartCoroutine(damageScript.SpawnTentacouille());
     }
 
     // Update is called once per frame
@@ -44,7 +47,7 @@ public class BombManager : MonoBehaviour
             if ((damageScript.isEveryMachineFullLife == true)&&(playerScript.activateLever==true))// il n'y a plus de dommages && la bombe est lancée
             {
                 bombScore++;
-                bombs[bombScore].SetActive(true);
+                bombs[bombScore-1].SetActive(true);
 
                 if (bombScore == 3)
                 {
@@ -52,8 +55,10 @@ public class BombManager : MonoBehaviour
                 }
                 else
                 {
-                timer = 60f;
-                bombingCD = 10f;
+                    timer = maxTime;
+                    bombingCD = maxBombingTime;
+                    StartCoroutine(damageScript.SpawnTentacouille());
+                    timer1.color = Color.white;
                 }
             }
 

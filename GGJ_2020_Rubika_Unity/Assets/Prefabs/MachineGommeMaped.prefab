@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c2a7e22c722c9d4e9e4ec2b8393c1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  machineLife: 100
+  machineLife: 25
   machineLifeUi: 0
   bubullePrefab: {fileID: 6784892071623335226, guid: f55095361ded4f840b636567429b5a9e,
     type: 3}

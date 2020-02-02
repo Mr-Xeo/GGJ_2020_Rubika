@@ -5,6 +5,11 @@ using UnityEngine;
 public class DamageScript : MonoBehaviour
 {
     public Screen_Shake InstanciateScreenshake;
+    public Vector2 tentacouilleOffset;
+    public GameObject tentacouillePrefab;
+    public GameObject tentacouilleFX;
+    public float tentacouilleSpeed;
+    public float spawnInterval;
     Machine[] machineArray;
 
     float secMaxExplo = 5;
@@ -12,31 +17,26 @@ public class DamageScript : MonoBehaviour
 
     float machineDmg = 25;
 
+    GameObject currentTentacouille;
+
     public bool isEveryMachineFullLife;
+
+    BombManager bombManager;
 
     void Start()
     {
+        bombManager = GetComponent<BombManager>();
         GameObject[] MachinesGo = GameObject.FindGameObjectsWithTag("Machine");
         machineArray = new Machine[MachinesGo.Length];
         for (int i = 0; i < MachinesGo.Length; i++)
         {
             machineArray[i] = MachinesGo[i].GetComponent<Machine>();
         }
-
-
-        InvokeRepeating("Re", 0, 5);
     }
 
     void Update()
     {
         CheckMachinesFullLife();
-
-        
-    }
-
-    void Timer()
-    {
-
     }
 
     void CheckMachinesFullLife()
@@ -63,18 +63,40 @@ public class DamageScript : MonoBehaviour
 
     IEnumerator AttackCoroutine()
     {
-        float secBeforeExplo = Random.Range(secMinExplo, secMaxExplo);
-        yield return new WaitForSeconds(secBeforeExplo);
-
         int RandomMachineChoose = Random.Range(0, machineArray.Length - 1);
         Machine goMachine = machineArray[RandomMachineChoose];
 
+        float secBeforeExplo = Random.Range(secMinExplo, secMaxExplo);
+        yield return new WaitForSeconds(secBeforeExplo);
+
+        currentTentacouille = Instantiate(tentacouillePrefab, (Vector2)goMachine.transform.position + tentacouilleOffset, Quaternion.identity);
+
+        Vector2 direction = goMachine.transform.position - currentTentacouille.transform.position;
+        direction.Normalize();
+        while (Vector2.Distance(currentTentacouille.transform.position, goMachine.transform.position) > 0.2f)
+        {
+            currentTentacouille.transform.position += (Vector3)direction * Time.deltaTime * tentacouilleSpeed;
+            yield return new WaitForEndOfFrame();
+        }
+        Destroy(currentTentacouille);
+        Destroy(Instantiate(tentacouilleFX, goMachine.transform.position, Quaternion.identity), 0.6f);
+
+
+
         goMachine.machineLife -= machineDmg;
         InstanciateScreenshake.shakeDuration = 1;
+        if(goMachine.machineLife < 0)
+        {
+            goMachine.machineLife = 0;
+        }
     }
 
-    void Re()
+    public IEnumerator SpawnTentacouille()
     {
-        StartCoroutine(AttackCoroutine());
+        while (bombManager.bombingCD == bombManager.maxBombingTime)
+        {
+            StartCoroutine(AttackCoroutine());
+            yield return new WaitForSeconds(spawnInterval);
+        }
     }
 }

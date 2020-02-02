@@ -62,6 +62,8 @@ public class AudioManager : MonoBehaviour
             sounds[i].SetSource (_go.AddComponent<AudioSource>());
             
         }
+        PlaySound("Gas");
+        Debug.Log("tamere");
     }
     public void PlaySound (string _name)
     {
